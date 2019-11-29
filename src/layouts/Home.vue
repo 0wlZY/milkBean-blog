@@ -35,12 +35,12 @@ export default {
     background-color: transparent;
   }
   .home-content-body {
-    background-color: #fff;
+    background-color: #dadfbc;
     margin-top: 64px;
     padding: 0 5%;
   }
   .home-content-footer {
-    background-color: #fff;
+    background-color: #dadfbc;
   }
 }
 </style>

@@ -2,19 +2,24 @@
   <div class="header-layout" :class="[`header-layout__${theme}`]">
     <div class="header-layout-title">
       <div class="header-layout-title-item">
-        <a-row justify="start">
-          <a-col :span="6">首页</a-col>
-          <a-col :span="6">博客</a-col>
-          <a-col :span="6">留言板</a-col>
-          <a-col :span="6">关于</a-col>
+        <a-row>
+          <a-col :span="8">博客</a-col>
+          <a-col :span="8">留言板</a-col>
+          <a-col :span="8">关于</a-col>
         </a-row>
       </div>
       <div class="header-layout-title-item">
-        <a-row justify="end">
-          <a-col :span="6">搜索</a-col>
-          <a-col :span="6">写博客</a-col>
-          <a-col :span="6">登录</a-col>
-          <a-col :span="6">注册</a-col>
+        <a-row>
+          <a-col :span="24">
+            <img class="item_icon" :src="icon" alt />
+          </a-col>
+        </a-row>
+      </div>
+      <div class="header-layout-title-item">
+        <a-row>
+          <a-col :span="8">写博客</a-col>
+          <a-col :span="8">登录</a-col>
+          <a-col :span="8">注册</a-col>
         </a-row>
       </div>
     </div>
@@ -22,6 +27,8 @@
 </template>
 
 <script>
+import icon from "assets/images/home/home_page.png";
+
 export default {
   props: {
     /**
@@ -32,12 +39,14 @@ export default {
      */
     theme: {
       type: String,
-      default: "line"
+      default: "green"
     }
   },
   computed: {},
   data() {
-    return {};
+    return {
+      icon
+    };
   },
   methods: {}
 };
@@ -48,22 +57,30 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 109;
-  color: rgb(253, 223, 125);
+  // color: rgb(253, 223, 125);
+  color: #e8f1f8;
+  font-weight: bold;
   box-shadow: 0 2px 3px rgba(26, 26, 26, 0.1);
-  &.header-layout__line {
-    background-color: #fff;
+  &.header-layout__green {
+    background-color: #a8a660;
   }
   &-title {
-    width: 90%;
+    width: 60%;
     margin: 0 auto;
     &-item {
-      width: 30%;
-      display: inline-block;
       text-align: center;
-      &:last-child {
-        float: right;
-        clear: both;
-      }
+      width: 45%;
+      display: inline-block;
+    }
+    &-item:nth-child(2) {
+      width: 10%;
+    }
+    .item_icon {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: #e88e01;
+      box-shadow: 2px 2px 3px rgba(26, 26, 26, 0.1);
     }
   }
 }
