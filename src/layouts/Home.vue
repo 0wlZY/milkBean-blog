@@ -1,46 +1,46 @@
 <template>
-  <div class="home-layout">
-    <a-layout class="home-content-layout">
-      <a-layout-header class="home-content-header">
-        <page-header />
-      </a-layout-header>
-      <a-layout-content class="home-content-body">
-        <router-view />
-      </a-layout-content>
-      <a-layout-footer class="home-content-footer">f</a-layout-footer>
+  <div>
+    <div class="pages-banner"></div>
+    <a-layout class="pages-layout">
+      <a-layout-sider class="pages-sider" width="360">
+        <page-sider />
+      </a-layout-sider>
+      <a-layout class="pages-content">
+        <a-layout-content>
+          Content
+        </a-layout-content>
+      </a-layout>
     </a-layout>
   </div>
 </template>
 
 <script>
-import pageHeader from "@/components/menu/PageHeader";
+import pageSider from "@/components/menu/PageSider";
 
 export default {
   components: {
-    pageHeader
+    pageSider
   }
 };
 </script>
 
 <style lang="less" scoped>
-.home-content-layout {
-  background-color: #fff;
-  .home-content-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    padding: 0;
-    background-color: transparent;
-  }
-  .home-content-body {
-    background-color: #dadfbc;
-    margin-top: 64px;
-    padding: 0 5%;
-  }
-  .home-content-footer {
-    background-color: #dadfbc;
+#components-layout-demo-basic .ant-layout-sider {
+  width: 360px;
+}
+
+.pages-banner {
+  width: 100%;
+  // height: 150px;
+  height: 5px;
+  background-color: #222;
+}
+.pages-layout {
+  padding: 0 80px;
+
+  .pages-content {
+    margin-left: 18px;
+    background-color: #fff;
   }
 }
 </style>
