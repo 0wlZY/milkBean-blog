@@ -8,11 +8,13 @@
       </div>
     </div>
     <!-- 菜单模块 -->
-    <div class="sider-header-menu"></div>
+    <tree-menu />
   </div>
 </template>
 
 <script>
+import treeMenu from "@/components/menu/TreeMenu";
+
 export default {
   props: {
     /**
@@ -24,7 +26,9 @@ export default {
       default: "black"
     }
   },
-  computed: {},
+  components: {
+    treeMenu
+  },
   data() {
     return {};
   },
@@ -34,6 +38,9 @@ export default {
 
 <style lang="less" scoped>
 .sider-header {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
   // 黑色模块
   .sider-header-title {
     height: 160px;
@@ -59,13 +66,6 @@ export default {
         font-size: 20px;
       }
     }
-  }
-
-  // 菜单模块
-  .sider-header-menu {
-    background-color: #fff;
-    font-size: 20px;
-    color: #555;
   }
 }
 </style>

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import pageSider from "@/components/menu/PageSider";
+import pageSider from "@/components/PageSider";
 
 export default {
   components: {
