@@ -7,68 +7,73 @@
 @import "~ant-design-vue/dist/antd.less";
 
 // -------- Colors -----------
-@primary-color: @primary;
+@text-color:#555;
+@primary-color: #fece5b;
+// @primary-color: #f7ab31;
+// #fbca53
+// -------- Font -----------
+@font-size-base:16px;
 
 // -------- Input -----------
-@input-height-base : 40px;
-@input-height-lg : 48px;
-@input-height-sm : 32px;
+// @input-height-base : 40px;
+// @input-height-lg : 48px;
+// @input-height-sm : 32px;
 
-// -------- Button -----------
-@btn-height-base : 38px;
-@btn-height-lg : 46px;
-@btn-height-sm : 30px;
+// // -------- Button -----------
+// @btn-height-base : 38px;
+// @btn-height-lg : 46px;
+// @btn-height-sm : 30px;
 
-// -------- Table -----------
-@table-padding-vertical: 12px;
-@table-row-hover-bg: #edf7fe;
+// // -------- Table -----------
+// @table-padding-vertical: 12px;
+// @table-row-hover-bg: #edf7fe;
 
-// -------- menu.dark --------
-@menu-dark-bg: @menuBg;
-@menu-dark-submenu-bg: @menuSubBg;
+// -------- Menu -----------
+@menu-item-font-size: @font-size-base;
+@menu-item-color: @text-color;
 
 /*
  * -------- 定制框架样式 -----------
  */
 
-// 去除ant框架button点击的光晕效果
-button[ant-click-animating-without-extra-node]:after {
-  border: 0 none;
-  opacity: 0;
-  animation:none 0 ease 0 1 normal;
-}
+// // 去除ant框架button点击的光晕效果
+// button[ant-click-animating-without-extra-node]:after {
+//   border: 0 none;
+//   opacity: 0;
+//   animation:none 0 ease 0 1 normal;
+// }
 
-// pagination
-.ant-pagination-options {
-  .ant-select-selection--single {
-    height: 32px;
-  }
+// // pagination
+// .ant-pagination-options {
+//   .ant-select-selection--single {
+//     height: 32px;
+//   }
 
-  .ant-select-selection__rendered {
-    line-height: 32px;
-  }
+//   .ant-select-selection__rendered {
+//     line-height: 32px;
+//   }
 
-  .ant-pagination-options-quick-jumper,
-  .ant-pagination-options-quick-jumper input {
-    height: 32px;
-    line-height: 32px;
-  }
-}
+//   .ant-pagination-options-quick-jumper,
+//   .ant-pagination-options-quick-jumper input {
+//     height: 32px;
+//     line-height: 32px;
+//   }
+// }
 
-// 表单错误提示
-.has-error {
-  .ant-form-explain {
-    font-size: 12px;
-    margin-top: 1px;
-  }
-}
+// // 表单错误提示
+// .has-error {
+//   .ant-form-explain {
+//     font-size: 12px;
+//     margin-top: 1px;
+//   }
+// }
 
-// form表单样式
-.label-line-2 {
-  .ant-form-item-label {
-    white-space: normal;
-    line-height: 1.4;
-    margin-top: 5px;
-    padding-right: 8px;
-  }
-}
+// // form表单样式
+// .label-line-2 {
+//   .ant-form-item-label {
+//     white-space: normal;
+//     line-height: 1.4;
+//     margin-top: 5px;
+//     padding-right: 8px;
+//   }
+// }

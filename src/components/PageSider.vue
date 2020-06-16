@@ -46,13 +46,21 @@ export default {
     height: 160px;
     color: #fff;
     text-align: center;
+    position: relative;
 
-    &.sider-header-title__black {
-      background-color: #222;
+    &.sider-header__black {
+      background: url(~@/assets/images/home/theme.jpg) no-repeat;
+      background-size: cover;
     }
 
     div {
       padding-top: 40px;
+      position: absolute;
+      top:0;
+      left: 0;
+      height: 160px;
+      width: 100%;
+      background:rgba(255,255,255,0.3);
 
       span {
         display: block;

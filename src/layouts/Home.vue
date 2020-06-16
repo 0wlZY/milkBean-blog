@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div class="pages-banner"></div>
+    <div class="pages-line"></div>
     <a-layout class="pages-layout">
       <a-layout-sider class="pages-sider" width="360">
         <page-sider />
+        <infor-sider/>
       </a-layout-sider>
       <a-layout class="pages-content">
         <a-layout-content>
-          Content
+          <router-view />
         </a-layout-content>
       </a-layout>
     </a-layout>
@@ -16,10 +17,12 @@
 
 <script>
 import pageSider from "@/components/PageSider";
+import inforSider from "@/components/InforSider";
 
 export default {
   components: {
-    pageSider
+    pageSider,
+    inforSider
   }
 };
 </script>
@@ -29,18 +32,22 @@ export default {
   width: 360px;
 }
 
-.pages-banner {
+.pages-line {
   width: 100%;
-  // height: 150px;
   height: 5px;
-  background-color: #222;
+  background-color: #fece5b;
 }
 .pages-layout {
   padding: 0 80px;
 
+  .pages-sider{
+    background-color: #f0f2f5;
+  }
+
   .pages-content {
     margin-left: 18px;
     background-color: #fff;
+    padding:20px;
   }
 }
 </style>

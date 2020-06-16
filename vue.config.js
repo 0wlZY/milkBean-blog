@@ -18,5 +18,30 @@ module.exports = {
       .set("views", resolve("src/views"))
       .set("api", resolve("src/axios/api"))
       .set("libs", resolve("src/libs"));
-  }
+  },
+
+  devServer: {
+    port: 8080,
+  },
+
+  css: {
+    sourceMap: process.env.NODE_ENV !== 'production',
+    loaderOptions: {
+      less: {
+        javascriptEnabled: true
+      }
+    },
+    // requireModuleExtension: true
+  },
+  // 第三方插件的选项
+  // pluginOptions: {
+  //   env: {
+  //     TEST: 'vue.config.js-->pluginOptions.env:TEST Global Parameters'
+  //   },
+  //   'style-resources-loader': {
+  //     preProcessor: 'less',
+  //     patterns: [path.resolve(__dirname, './src/assets/style/settings.less')]
+  //   }
+  // }
+
 };

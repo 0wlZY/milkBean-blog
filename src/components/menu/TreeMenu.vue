@@ -4,30 +4,25 @@
     <a-menu
       @click="handleClick"
       style="width:100%"
-      :defaultSelectedKeys="['1']"
+      :default-selected-keys="['1']"
       mode="inline"
     >
-      <a-menu-item key="1">
+      <a-menu-item :key="item.id" v-for="(item) in menuList">
         <a-icon type="pie-chart" />
-        <span>首页</span>
-      </a-menu-item>
-      <a-menu-item key="2">
-        <a-icon type="pie-chart" />
-        <span>分类</span>
-      </a-menu-item>
-      <a-menu-item key="3">
-        <a-icon type="pie-chart" />
-        <span>归档</span>
+        <span>{{item.menu}}</span>
       </a-menu-item>
     </a-menu>
   </div>
 </template>
 
 <script>
+const menuList=[{id:1,menu:'首页'},{id:2,menu:'分页'},{id:3,menu:'归档'}]
 export default {
   computed: {},
   data() {
-    return {};
+    return {
+      menuList
+    };
   },
   methods: {
     handleClick(e) {
@@ -39,10 +34,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-// 菜单模块
-.sider-header-menu {
-  background-color: #fff;
-  font-size: 20px;
-  color: #555;
+.ant-menu{
+  width:100%;
+  padding: 10px 0;
 }
 </style>
