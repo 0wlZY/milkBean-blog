@@ -1,6 +1,6 @@
 <template>
   <div class="sider-header">
-    <!-- 黑色模块 -->
+    <!-- 标题模块 -->
     <div class="sider-header-title" :class="[`sider-header__${theme}`]">
       <div>
         <span class="sider-header-welcome">welcome</span>
@@ -56,11 +56,11 @@ export default {
     div {
       padding-top: 40px;
       position: absolute;
-      top:0;
+      top: 0;
       left: 0;
       height: 160px;
       width: 100%;
-      background:rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
 
       span {
         display: block;

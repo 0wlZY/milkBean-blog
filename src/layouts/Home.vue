@@ -4,7 +4,7 @@
     <a-layout class="pages-layout">
       <a-layout-sider class="pages-sider" width="360">
         <page-sider />
-        <infor-sider/>
+        <infor-sider />
       </a-layout-sider>
       <a-layout class="pages-content">
         <a-layout-content>
@@ -40,14 +40,14 @@ export default {
 .pages-layout {
   padding: 0 80px;
 
-  .pages-sider{
+  .pages-sider {
     background-color: #f0f2f5;
   }
 
   .pages-content {
     margin-left: 18px;
     background-color: #fff;
-    padding:20px;
+    padding: 20px;
   }
 }
 </style>

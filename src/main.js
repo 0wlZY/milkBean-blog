@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 // import '@/core/use'
-import '@/assets/style/ant-variables.less'
+import "@/assets/style/ant-variables.less";
 // Antd-ui 全局
 // import "ant-design-vue/dist/antd.less";
 import Antd from "ant-design-vue";

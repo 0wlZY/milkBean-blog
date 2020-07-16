@@ -21,18 +21,18 @@ module.exports = {
   },
 
   devServer: {
-    port: 8080,
+    port: 8080
   },
 
   css: {
-    sourceMap: process.env.NODE_ENV !== 'production',
+    sourceMap: process.env.NODE_ENV !== "production",
     loaderOptions: {
       less: {
         javascriptEnabled: true
       }
-    },
+    }
     // requireModuleExtension: true
-  },
+  }
   // 第三方插件的选项
   // pluginOptions: {
   //   env: {
@@ -43,5 +43,4 @@ module.exports = {
   //     patterns: [path.resolve(__dirname, './src/assets/style/settings.less')]
   //   }
   // }
-
 };
