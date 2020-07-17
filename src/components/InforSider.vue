@@ -7,21 +7,44 @@
       <p>所有的晦暗都留给过往，凛冬散尽星河长明。</p>
     </div>
     <a-row class="sider-state">
-      <a-col :span="8" class="sider-state-item">
+      <a-col :span="6" class="sider-state-item">
         <span class="sider-state-item-count">121</span>
         <span class="sider-state-item-name">浏览数</span>
       </a-col>
-      <a-col :span="8" class="sider-state-item">
+      <a-col :span="3">
+        <a-divider type="vertical" />
+      </a-col>
+      <a-col :span="6" class="sider-state-item">
         <span class="sider-state-item-count">121</span>
         <span class="sider-state-item-name">点赞</span>
       </a-col>
-      <a-col :span="8" class="sider-state-item">
+      <a-col :span="3">
+        <a-divider type="vertical" />
+      </a-col>
+      <a-col :span="6" class="sider-state-item">
         <span class="sider-state-item-count">121</span>
         <span class="sider-state-item-name">文章</span>
       </a-col>
     </a-row>
-
-    <a-back-top />
+    <a-divider :dashed="true" />
+    <div class="sider-skip">
+      <a-row>
+        <a-col :span="12">
+          <a-icon type="github" theme="filled" />
+          <span>GitHub</span>
+        </a-col>
+        <a-col :span="12">
+          <a-icon type="wechat" theme="filled" />
+          <span>Wechat</span>
+        </a-col>
+      </a-row>
+      <a-row class="sider-skip">
+        <a-col :span="12">
+          <a-icon type="weibo-circle" theme="filled" />
+          <span>微博</span>
+        </a-col>
+      </a-row>
+    </div>
   </div>
 </template>
 
@@ -59,12 +82,12 @@ export default {
   .sider-state {
     margin-top: 30px;
 
-    .sider-state-item:last-child {
-      border: none;
+    .ant-divider {
+      height: 30px;
+      margin-top: 10px;
     }
 
     .sider-state-item {
-      border-right: 1px solid #fece5b;
       display: inline-block;
       color: #fece5b;
       font-size: 14px;
@@ -74,6 +97,19 @@ export default {
         text-align: center;
         font-weight: 600;
         font-size: 16px;
+      }
+    }
+  }
+
+  .sider-skip {
+    text-align: left;
+
+    .ant-row {
+      margin-bottom: 15px;
+
+      i {
+        font-size: 24px;
+        margin-right: 8px;
       }
     }
   }
