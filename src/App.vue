@@ -24,6 +24,5 @@ export default {
 }
 
 .global-controller-app {
-  height: 100%;
 }
 </style>

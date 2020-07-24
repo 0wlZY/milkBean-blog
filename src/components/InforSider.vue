@@ -45,6 +45,20 @@
         </a-col>
       </a-row>
     </div>
+    <a-divider :dashed="true" />
+    <div class="sider-links">
+      <div class="sider-links-title">
+        <a-icon type="link" />
+        <span>友链</span>
+      </div>
+      <ul>
+        <li>
+          <a href="http://www.96qufei.cn" title="曲永庆的博客" target="_blank">
+            <span> Qufei's blog</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -65,7 +79,7 @@ export default {
 
 <style lang="less" scoped>
 .sider-infor-menu {
-  margin-top: 30px;
+  margin: 30px 0;
   padding: 30px;
   background-color: #fff;
   font-size: 16px;
@@ -92,11 +106,11 @@ export default {
       color: #fece5b;
       font-size: 14px;
 
-      .sider-state-item-count {
+      &-count {
         display: block;
         text-align: center;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 18px;
       }
     }
   }
@@ -111,6 +125,43 @@ export default {
         font-size: 24px;
         margin-right: 8px;
       }
+    }
+  }
+
+  .sider-links{
+    &-title{
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+
+      span{
+        margin-left:8px;
+      }
+    }
+
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li{
+        margin: 15px 0 0;
+
+        span{
+          padding-bottom: 5px;
+          border-bottom: 1px solid #555,
+        }
+
+        a{
+          text-decoration:none;
+          color:#555;
+        }
+
+        a:hover{
+          color:#000;
+        }
+      }
+      
     }
   }
 }
