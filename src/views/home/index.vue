@@ -1,5 +1,27 @@
  <template>
-  <ul class="home-list">
+ <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="listData">
+    <div slot="footer"><b>ant design vue</b> footer part</div>
+    <a-list-item slot="renderItem" key="item.title" slot-scope="item">
+      <template v-for="{ type, text } in actions" slot="actions">
+        <span :key="type">
+          <a-icon :type="type" style="margin-right: 8px" />
+          {{ text }}
+        </span>
+      </template>
+      <img
+        slot="extra"
+        width="272"
+        alt="logo"
+        :src="openImg"
+      />
+      <a-list-item-meta :description="item.description">
+        <a slot="title" :href="item.href">{{ item.title }}</a>
+        <!-- <a-avatar slot="avatar" :src="item.avatar" /> -->
+      </a-list-item-meta>
+      {{ item.content }}
+    </a-list-item>
+  </a-list>
+  <!-- <ul class="home-list">
     <li class="list-item" v-for="(item,index) in listData" :key="index">
       <div align="center">
         <img class="list-item-img" :src="openImg" alt="" >
@@ -17,7 +39,7 @@
         </a-breadcrumb-item>
       </a-breadcrumb>
     </li>
-  </ul>
+  </ul> -->
 </template>
 
 <script>
@@ -31,6 +53,15 @@ const defData = [{
       '历经了千辛万苦我的博客终于改版成相对满意的样子，今天正式开张~欢迎多多光临~',
     content:
       "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以"
+      },
+      {
+    id:'2',
+    href: 'https://www.antdv.com/',
+    title: "关于发布文章",
+    description:
+      '如何使用插件进入博客，用于编辑文章教程',
+    content:
+      "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以"
       }]
 
 export default {
@@ -39,6 +70,12 @@ export default {
     return {
       listData:defData,
       openImg,
+      pagination: {
+        onChange: page => {
+          console.log(page);
+        },
+        pageSize: 3,
+      },
       actions: [
         { type: 'star-o', text: '156' },
         { type: 'like-o', text: '156' },
@@ -49,47 +86,47 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.home-list{
-  margin: 0;
-  padding: 0;
-  list-style: none;
+// <style lang="less" scoped>
+// .home-list{
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
 
-  .list-item{
-    padding: 16px 0;
-    border-bottom: 1px solid #e8e8e8;
+//   .list-item{
+//     padding: 16px 0;
+//     border-bottom: 1px solid #e8e8e8;
 
-    &-img{
-      width:600px;
-      height: 200px;
-      margin: 30px 0;
-      padding: 3px;
-      border: 1px solid #ddd;
-    }
+//     &-img{
+//       width:600px;
+//       height: 200px;
+//       margin: 30px 0;
+//       padding: 3px;
+//       border: 1px solid #ddd;
+//     }
 
-    &-article{
-      display: block;
-      color: #555;
-      font-size: 16px;
+//     &-article{
+//       display: block;
+//       color: #555;
+//       font-size: 16px;
 
-      &-meta{
-        color: rgba(0, 0, 0, 0.45);
-        font-size: 16px;
-        line-height: 22px;
-        text-align: center;
-        margin-bottom:16px;
-        h4{
-          color: rgba(0, 0, 0, 0.85);
-          margin-bottom: 12px;
-          font-size: 24px;
-          line-height: 24px;
-        }
-      }
-    }
-    .ant-breadcrumb{
-      margin-top: 16px;
-    }
-  }
+//       &-meta{
+//         color: rgba(0, 0, 0, 0.45);
+//         font-size: 16px;
+//         line-height: 22px;
+//         text-align: center;
+//         margin-bottom:16px;
+//         h4{
+//           color: rgba(0, 0, 0, 0.85);
+//           margin-bottom: 12px;
+//           font-size: 24px;
+//           line-height: 24px;
+//         }
+//       }
+//     }
+//     .ant-breadcrumb{
+//       margin-top: 16px;
+//     }
+//   }
 
-}
-</style>
+// }
+// </style>

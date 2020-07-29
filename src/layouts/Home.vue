@@ -2,11 +2,11 @@
   <div>
     <div class="pages-line"></div>
     <a-layout class="pages-layout">
-      <a-layout-sider class="pages-sider" width="360"  :style="{ overflow: 'auto', height: '100vh', position: 'fixed',top: '5px', left: '80px' }">
+      <a-layout-sider class="pages-sider" width="360"  :style="{ overflow: 'auto', height: '100vh', position: 'fixed',top: '5px' }">
         <page-sider />
         <infor-sider />
       </a-layout-sider>
-      <a-layout :style="{ marginLeft: '460px' }">
+      <a-layout :style="{ marginLeft: '380px' }">
         <a-layout-content class="pages-content" :style="{ margin: '5px ', overflow: 'initial' }">
           <router-view />
         </a-layout-content>
@@ -46,8 +46,8 @@ export default {
 }
 
 .pages-layout {
-  padding-right:  80px;
-  padding-bottom: 20px;
+  width: 100%;
+  padding: 0 10% 20px 10%;
 
   .pages-sider {
     background-color: #f0f2f5;
