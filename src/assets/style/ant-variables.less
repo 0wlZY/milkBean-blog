@@ -35,7 +35,27 @@
 /*
  * -------- 定制框架样式 -----------
  */
+//  滚动条整体部分
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color:#f0f2f5;
+  }
 
+//   滚动条的轨道的两端按钮
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
+// 滚动条里面的移动方块
+::-webkit-scrollbar-thumb {
+    min-height: 18px;
+    background-color:rgba(0, 0, 0, 0.12);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 2px;
+}
 // // 去除ant框架button点击的光晕效果
 // button[ant-click-animating-without-extra-node]:after {
 //   border: 0 none;

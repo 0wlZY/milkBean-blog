@@ -34,11 +34,11 @@ export default {
 
 <style lang="less" scoped>
 #components-layout-demo-basic .ant-layout-sider {
-  width: 360px;
+  width: 365px;
 }
 
 .pages-line {
-  width: 100%;
+  width: 100%;  
   height: 5px;
   background-color: #fece5b;
   position: fixed;
@@ -51,6 +51,7 @@ export default {
 
   .pages-sider {
     background-color: #f0f2f5;
+    padding-left: 5px;
   }
 
   .pages-content {

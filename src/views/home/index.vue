@@ -1,45 +1,38 @@
  <template>
- <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="listData">
-    <div slot="footer"><b>ant design vue</b> footer part</div>
-    <a-list-item slot="renderItem" key="item.title" slot-scope="item">
-      <template v-for="{ type, text } in actions" slot="actions">
-        <span :key="type">
-          <a-icon :type="type" style="margin-right: 8px" />
-          {{ text }}
-        </span>
-      </template>
-      <img
-        slot="extra"
-        width="272"
-        alt="logo"
-        :src="openImg"
-      />
-      <a-list-item-meta :description="item.description">
-        <a slot="title" :href="item.href">{{ item.title }}</a>
-        <!-- <a-avatar slot="avatar" :src="item.avatar" /> -->
-      </a-list-item-meta>
-      {{ item.content }}
-    </a-list-item>
-  </a-list>
-  <!-- <ul class="home-list">
+  <ul class="home-list">
     <li class="list-item" v-for="(item,index) in listData" :key="index">
-      <div align="center">
-        <img class="list-item-img" :src="openImg" alt="" >
-      </div>
       <div class="list-item-article">
-        <div class="list-item-article-meta">
+        <div class="list-item-article-title">
           <a href=${item.href}><h4>{{item.title}}</h4></a>
-          {{item.description}}
+          <a-breadcrumb separator="|">
+            <a-breadcrumb-item   style="margin-right: 8px;color:rgba(0, 0, 0, 0.45);">
+              <span style="margin-right: 8px">发表于</span>
+              {{item.articleTime}}
+            </a-breadcrumb-item>
+            <a-breadcrumb-item   style="margin-right: 8px;color:rgba(0, 0, 0, 0.45);">
+              <a-icon type="tags" style="margin-right: 8px"/>
+              {{item.articleType}}
+            </a-breadcrumb-item>
+            <a-breadcrumb-item   style="margin-right: 8px;color:rgba(0, 0, 0, 0.45);">
+              <span style="margin-right: 8px">阅读量</span>
+              {{item.articleFrequency}}
+            </a-breadcrumb-item>
+          </a-breadcrumb>
+          <div class="article-description">
+            <p>{{item.description}}</p>
+          </div>
         </div>
         {{item.content}} 
       </div>
-      <a-breadcrumb separator="|">
-        <a-breadcrumb-item v-for="{ type, text} in actions" :key="type"  style="margin-right: 8px;color:rgba(0, 0, 0, 0.45);">
-          <a-icon :type="type" style="margin-right: 8px"  />{{text}}
-        </a-breadcrumb-item>
-      </a-breadcrumb>
+      <div class="post-more-link">
+        <a class="btn" href=${item.href} rel="contents">
+          阅读全文 »
+        </a>
+      </div>
     </li>
-  </ul> -->
+    <a-pagination size="small" :total="30" />
+  </ul>
+
 </template>
 
 <script>
@@ -52,8 +45,12 @@ const defData = [{
     description:
       '历经了千辛万苦我的博客终于改版成相对满意的样子，今天正式开张~欢迎多多光临~',
     content:
-      "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以"
+      "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以",
+      articleTime:"2020-07-31",
+      articleType:"other",
+      articleFrequency:"98"
       },
+    
       {
     id:'2',
     href: 'https://www.antdv.com/',
@@ -70,12 +67,12 @@ export default {
     return {
       listData:defData,
       openImg,
-      pagination: {
-        onChange: page => {
-          console.log(page);
-        },
-        pageSize: 3,
-      },
+      // pagination: {
+      //   onChange: page => {
+      //     console.log(page);
+      //   },
+      //   pageSize: 3,
+      // },
       actions: [
         { type: 'star-o', text: '156' },
         { type: 'like-o', text: '156' },
@@ -86,47 +83,65 @@ export default {
 };
 </script>
 
-// <style lang="less" scoped>
-// .home-list{
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
+<style lang="less" scoped>
+.home-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-//   .list-item{
-//     padding: 16px 0;
-//     border-bottom: 1px solid #e8e8e8;
+  .list-item{
+    padding: 16px 0;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 2;
 
-//     &-img{
-//       width:600px;
-//       height: 200px;
-//       margin: 30px 0;
-//       padding: 3px;
-//       border: 1px solid #ddd;
-//     }
+    // .list-item-img{
+    //   margin: 30px 0;
+    //   padding: 3px;
+    //   border: 1px solid #ddd;
+    // }
 
-//     &-article{
-//       display: block;
-//       color: #555;
-//       font-size: 16px;
+    &-article{
+      display: block;
+      color: #555;
+      font-size: 16px;
 
-//       &-meta{
-//         color: rgba(0, 0, 0, 0.45);
-//         font-size: 16px;
-//         line-height: 22px;
-//         text-align: center;
-//         margin-bottom:16px;
-//         h4{
-//           color: rgba(0, 0, 0, 0.85);
-//           margin-bottom: 12px;
-//           font-size: 24px;
-//           line-height: 24px;
-//         }
-//       }
-//     }
-//     .ant-breadcrumb{
-//       margin-top: 16px;
-//     }
-//   }
+      &-title{
+        margin-bottom:16px;
+        line-height: 1.2;
 
-// }
-// </style>
+        h4{
+          vertical-align: top;
+          font-size: 26px;
+          color: #555;
+          margin-bottom: 12px;
+        }
+
+        .ant-breadcrumb{
+          margin-bottom: 20px;
+          margin-top: 16px;
+        }
+
+        .article-description{
+          font-size: 14px;
+          padding: 0 15px;
+          color: #666;
+          border-left: 4px solid #ddd;
+          margin-bottom: 25px;
+        }
+      }
+    }
+
+    .post-more-link {
+      margin-top: 20px;
+      text-align: left;
+
+      .btn {
+        color: #555;
+        font-size: 16px;
+        padding: 0;
+        border-bottom: 2px solid #666;  
+      }
+    }
+  }
+}
+ </style>

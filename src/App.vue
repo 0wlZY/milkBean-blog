@@ -20,7 +20,8 @@ export default {
 
 <style lang="less">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  // font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: Lato,"PingFang SC","Microsoft YaHei",sans-serif;
 }
 
 .global-controller-app {
