@@ -41,7 +41,12 @@
       <a-row class="sider-skip">
         <a-col :span="12">
           <a-icon type="weibo-circle" theme="filled" />
-          <span>微博</span>
+          <a
+            href="https://weibo.com/3914829201/profile?topnav=1&wvr=6&is_all=1"
+            target="_blank"
+          >
+            <span>微博</span>
+          </a>
         </a-col>
       </a-row>
     </div>
@@ -69,15 +74,19 @@ export default {
   computed: {},
   data() {
     return {
-      imgAvatar
+      imgAvatar,
     };
   },
   methods: {},
-  watch: {}
+  watch: {},
 };
 </script>
 
 <style lang="less" scoped>
+a {
+  text-decoration: none;
+  color: #555;
+}
 .sider-infor-menu {
   margin: 30px 0;
   padding: 30px;
@@ -128,40 +137,39 @@ export default {
     }
   }
 
-  .sider-links{
-    &-title{
+  .sider-links {
+    &-title {
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 10px;
 
-      span{
-        margin-left:8px;
+      span {
+        margin-left: 8px;
       }
     }
 
-    ul{
+    ul {
       margin: 0;
       padding: 0;
       list-style: none;
 
-      li{
+      li {
         margin: 15px 0 0;
 
-        span{
+        span {
           padding-bottom: 5px;
-          border-bottom: 1px solid #555,
+          border-bottom: 1px solid #555;
         }
 
-        a{
-          text-decoration:none;
-          color:#555;
+        a {
+          text-decoration: none;
+          color: #555;
         }
 
-        a:hover{
-          color:#000;
+        a:hover {
+          color: #000;
         }
       }
-      
     }
   }
 }

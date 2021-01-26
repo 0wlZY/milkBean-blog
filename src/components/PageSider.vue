@@ -8,7 +8,7 @@
       </div>
     </div>
     <!-- 菜单模块 -->
-    <tree-menu />
+    <tree-menu :menus="authMenu" />
   </div>
 </template>
 
@@ -23,16 +23,35 @@ export default {
      */
     theme: {
       type: String,
-      default: "black"
-    }
+      default: "black",
+    },
   },
   components: {
-    treeMenu
+    treeMenu,
+  },
+  computed: {
+    /**
+     * 本地菜单
+     * @dir @/store/module/menu.js
+     */
+    menuList() {
+      return this.$store.state.menu.menuList;
+    },
+
+    /**
+     * 权限菜单
+     * 根据本地菜单与用户权限进行匹配所得
+     * 注：后台未提供菜单数据
+     */
+    authMenu() {
+      const revealMenu = this.menuList.filter((item) => !item.hideMenu) || [];
+      return revealMenu;
+    },
   },
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
 };
 </script>
 

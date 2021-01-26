@@ -2,38 +2,116 @@
   <!-- 菜单模块 -->
   <div class="sider-header-menu">
     <a-menu
-      @click="handleClick"
-      style="width:100%"
-      :default-selected-keys="['1']"
       mode="inline"
+      style="width: 100%"
+      :openKeys="openKeys"
+      :selectedKeys="selectedKeys"
+      @openChange="onOpenChange"
     >
-      <a-menu-item :key="item.id" v-for="item in menuList">
-        <a-icon type="pie-chart" />
-        <span>{{ item.menu }}</span>
-      </a-menu-item>
+      <template v-for="item in menus">
+        <a-menu-item :key="item.path">
+          <router-link :to="item.path">
+            <!-- <a-icon v-if="item.icon" :type="item.icon" />
+          <img class="anticon" v-else-if="item.imgIcon" :src="item.imgIcon" /> -->
+            <a-icon type="pie-chart" />
+            <span>{{ item.meta && item.meta.title }}</span>
+          </router-link>
+          <!-- <a-icon type="pie-chart" />
+        <span>{{ item.menu }}</span> -->
+        </a-menu-item>
+      </template>
     </a-menu>
   </div>
 </template>
 
 <script>
-const menuList = [
-  { id: 1, menu: "首页" },
-  { id: 2, menu: "分页" },
-  { id: 3, menu: "归档" }
-];
 export default {
-  computed: {},
+  props: {
+    menus: {
+      type: Array,
+      required: true,
+    },
+    collapsed: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   data() {
     return {
-      menuList
+      openKeys: [],
+      selectedKeys: [],
+      cachedOpenKeys: [],
     };
   },
-  methods: {
-    handleClick(e) {
-      console.log("click", e);
-    }
+  computed: {
+    /**
+     * 获取所有一级菜单
+     */
+    rootSubmenuKeys: (vm) => {
+      const keys = [];
+      vm.menus.forEach((item) => keys.push(item.path));
+      return keys;
+    },
   },
-  watch: {}
+  watch: {
+    collapsed(val) {
+      if (val) {
+        this.cachedOpenKeys = this.openKeys.concat();
+        this.openKeys = [];
+      } else {
+        this.openKeys = this.cachedOpenKeys;
+      }
+    },
+    $route() {
+      this.updateMenu();
+    },
+  },
+  methods: {
+    /**
+     * 只显示当前父级菜单，点击其他菜单隐藏当前
+     */
+    onOpenChange(openKeys) {
+      const latestOpenKey = openKeys.find(
+        (key) => !this.openKeys.includes(key)
+      );
+      if (!this.rootSubmenuKeys.includes(latestOpenKey)) {
+        this.openKeys = openKeys;
+      } else {
+        this.openKeys = latestOpenKey ? [latestOpenKey] : [];
+      }
+    },
+
+    /**
+     * 更新菜单，选中当前页
+     */
+    updateMenu() {
+      const routes = this.$route.matched.concat();
+
+      if (routes.length >= 3) {
+        routes.pop();
+        this.selectedKeys = [routes[0].path];
+      } else {
+        const pathItem = routes.pop().path;
+        this.selectedKeys = [
+          pathItem.substr(pathItem.length - 1) === "/"
+            ? pathItem.substr(0, pathItem.length - 1)
+            : pathItem,
+        ];
+      }
+
+      const openKeys = [];
+      routes.forEach((item) => {
+        openKeys.push(item.path);
+      });
+      this.collapsed
+        ? (this.cachedOpenKeys = openKeys)
+        : (this.openKeys = openKeys);
+    },
+  },
+  mounted() {
+    this.updateMenu();
+  },
 };
 </script>
 
