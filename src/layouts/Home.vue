@@ -53,6 +53,7 @@ export default {
   background-color: #fece5b;
   position: fixed;
   top: 0;
+  z-index: 9;
 }
 
 .pages-layout {

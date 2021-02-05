@@ -7,14 +7,19 @@
         :key="`${index}-${item}`"
         >{{ `${item.name}(${item.num})` }}</a-button
       >
-      <a-divider dashed="true" />
+      <a-divider :dashed="true" />
+      <radar-chart />
     </div>
   </div>
 </template>
 
 <script>
+import RadarChart from "@/components/RadarChart";
+
 export default {
-  components: {},
+  components: {
+    RadarChart,
+  },
   data() {
     return {
       dataClassify: [
@@ -22,6 +27,8 @@ export default {
         { name: "JS", num: "4" },
         { name: "生活篇章", num: "4" },
         { name: "读书笔记", num: "4" },
+        { name: "css", num: "4" },
+        { name: "啊吧啊吧", num: "2" },
       ],
     };
   },

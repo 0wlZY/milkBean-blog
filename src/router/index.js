@@ -78,6 +78,20 @@ const routes = [
     ],
     // imgIcon: $config.menuIcons.iconRisk
   },
+  {
+    path: "/tag",
+    component: Home,
+    meta: {
+      title: '标签'
+    },
+    children: [
+      {
+        path: "",
+        component: () => import("@/views/tag/index")
+      }
+    ],
+    // imgIcon: $config.menuIcons.iconRisk
+  },
   // {
   //   path: '/login',
   //   name: 'login',
