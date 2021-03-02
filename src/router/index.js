@@ -1,34 +1,7 @@
-// import Vue from "vue";
-// import Router from "vue-router";
 
-// Vue.use(Router);
-
-// export default new Router({
-//   mode: "history",
-//   base: process.env.BASE_URL,
-//   routes: [
-//     {
-//       path: "/",
-//       component: Home,
-//       children: [
-//         {
-//           path: "",
-//           component: () => import("@/views/home/index")
-//         }
-//       ]
-//     }
-//   ]
-// });
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from "@/layouts/Home.vue";
-// import basicLayout from '@/layouts/BasicLayout'
-// import $config from '@/config'
-
-// // 子路由
-// import risk from './risk'
-// import batch from './batch'
-// import safety from './safety'
 
 Vue.use(VueRouter)
 
@@ -62,7 +35,7 @@ const routes = [
         component: () => import("@/views/home/index")
       }
     ],
-    // imgIcon: $config.menuIcons.iconRisk
+    imgIcon: 'home'
   },
   {
     path: "/classify",
@@ -76,7 +49,7 @@ const routes = [
         component: () => import("@/views/classify/index")
       }
     ],
-    // imgIcon: $config.menuIcons.iconRisk
+    imgIcon: 'appstore'
   },
   {
     path: "/tag",
@@ -90,7 +63,21 @@ const routes = [
         component: () => import("@/views/tag/index")
       }
     ],
-    // imgIcon: $config.menuIcons.iconRisk
+    imgIcon: 'tags'
+  },
+  {
+    path: "/file",
+    component: Home,
+    meta: {
+      title: '归档'
+    },
+    children: [
+      {
+        path: "",
+        component: () => import("@/views/file/index")
+      }
+    ],
+    imgIcon: 'bars'
   },
   // {
   //   path: '/login',

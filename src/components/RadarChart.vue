@@ -14,13 +14,6 @@ export default {
       type: Array,
       default: () => [],
     },
-    // interval: {
-    //   type: [String, Number],
-    //   default: 'auto'
-    // },
-    // rotate: {
-    //   type: [String, Number]
-    // }
   },
   methods: {
     initRadarChart() {

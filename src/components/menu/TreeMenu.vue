@@ -11,13 +11,9 @@
       <template v-for="item in menus">
         <a-menu-item :key="item.path">
           <router-link :to="item.path">
-            <!-- <a-icon v-if="item.icon" :type="item.icon" />
-          <img class="anticon" v-else-if="item.imgIcon" :src="item.imgIcon" /> -->
-            <a-icon type="pie-chart" />
+            <a-icon :type="`${item.imgIcon}`" />
             <span>{{ item.meta && item.meta.title }}</span>
           </router-link>
-          <!-- <a-icon type="pie-chart" />
-        <span>{{ item.menu }}</span> -->
         </a-menu-item>
       </template>
     </a-menu>
