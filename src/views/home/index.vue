@@ -1,27 +1,21 @@
- <template>
+<template>
   <ul class="home-list">
     <li class="list-item" v-for="(item, index) in listData" :key="index">
       <div class="list-item-article">
         <div class="list-item-article-title">
           <a href="${item.href}"
-            ><h4>{{ item.title }}</h4></a
+            ><h3>{{ item.title }}</h3></a
           >
           <a-breadcrumb separator="|">
-            <a-breadcrumb-item
-              style="margin-right: 8px; color: rgba(0, 0, 0, 0.45);"
-            >
+            <a-breadcrumb-item class="list-breadcrumb">
               <span style="margin-right: 8px;">发表于</span>
               {{ item.articleTime }}
             </a-breadcrumb-item>
-            <a-breadcrumb-item
-              style="margin-right: 8px; color: rgba(0, 0, 0, 0.45);"
-            >
+            <a-breadcrumb-item class="list-breadcrumb">
               <a-icon type="tags" style="margin-right: 8px;" />
               {{ item.articleType }}
             </a-breadcrumb-item>
-            <a-breadcrumb-item
-              style="margin-right: 8px; color: rgba(0, 0, 0, 0.45);"
-            >
+            <a-breadcrumb-item class="list-breadcrumb">
               <span style="margin-right: 8px;">阅读量</span>
               {{ item.articleFrequency }}
             </a-breadcrumb-item>
@@ -56,7 +50,7 @@ const defData = [
       "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以",
     articleTime: "2020-07-31",
     articleType: "other",
-    articleFrequency: "98",
+    articleFrequency: "98"
   },
 
   {
@@ -65,8 +59,24 @@ const defData = [
     title: "关于发布文章",
     description: "如何使用插件进入博客，用于编辑文章教程",
     content:
-      "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以",
+      "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以"
   },
+  {
+    id: "3",
+    href: "https://www.antdv.com/",
+    title: "关于发布文章",
+    description: "如何使用插件进入博客，用于编辑文章教程",
+    content:
+      "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以"
+  },
+  {
+    id: "4",
+    href: "https://www.antdv.com/",
+    title: "关于发布文章",
+    description: "如何使用插件进入博客，用于编辑文章教程",
+    content:
+      "vue中的v-for 循环对象数组。循环的主体不会变 ，主要模式还是<p v-for='item in list'>{{item}}</p>data如下data: {list: [{ id: 1, name: 'zs1' },{ id: 2, name: 'zs2' }]},刻意知道list数组中，不是单纯地 数字，而是 每一个对象。所以"
+  }
 ];
 
 export default {
@@ -84,24 +94,28 @@ export default {
       actions: [
         { type: "star-o", text: "156" },
         { type: "like-o", text: "156" },
-        { type: "message", text: "2" },
-      ],
+        { type: "message", text: "2" }
+      ]
     };
-  },
+  }
 };
 </script>
 
 <style lang="less" scoped>
 .home-list {
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
 
   .list-item {
-    padding: 16px 0;
+    background-color: #fff;
+    padding: 25px 40px;
     border-bottom: 1px solid #e8e8e8;
-    line-height: 2;
-
+    line-height: 1.7;
+    border-radius: 0 100px 100px 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     // .list-item-img{
     //   margin: 30px 0;
     //   padding: 3px;
@@ -116,10 +130,12 @@ export default {
       &-title {
         margin-bottom: 16px;
         line-height: 1.2;
-
-        h4 {
+        .list-breadcrumb {
+          margin-right: 8px;
+          color: rgba(0, 0, 0, 0.45);
+        }
+        h2 {
           vertical-align: top;
-          font-size: 26px;
           color: #555;
           margin-bottom: 12px;
         }
@@ -130,7 +146,7 @@ export default {
         }
 
         .article-description {
-          font-size: 14px;
+          font-size: 16px;
           padding: 0 15px;
           color: #666;
           border-left: 4px solid #ddd;

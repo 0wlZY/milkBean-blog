@@ -18,7 +18,7 @@ import RadarChart from "@/components/RadarChart";
 
 export default {
   components: {
-    RadarChart,
+    RadarChart
   },
   data() {
     return {
@@ -28,10 +28,10 @@ export default {
         { name: "生活篇章", num: "4" },
         { name: "读书笔记", num: "4" },
         { name: "css", num: "4" },
-        { name: "啊吧啊吧", num: "2" },
-      ],
+        { name: "啊吧啊吧", num: "2" }
+      ]
     };
-  },
+  }
 };
 </script>
 
@@ -39,12 +39,12 @@ export default {
 .classify-list {
   text-align: center;
   &-title {
-    font-size: 18px;
+    font-size: 24px;
     margin: 40px 0;
   }
   &-content {
-    font-size: 18px;
     button {
+      font-size: 18px;
       padding: 5px 15px;
       height: auto;
       margin: 10px;

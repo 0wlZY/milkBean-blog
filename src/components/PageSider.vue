@@ -23,11 +23,11 @@ export default {
      */
     theme: {
       type: String,
-      default: "black",
-    },
+      default: "black"
+    }
   },
   components: {
-    treeMenu,
+    treeMenu
   },
   computed: {
     /**
@@ -44,14 +44,14 @@ export default {
      * 注：后台未提供菜单数据
      */
     authMenu() {
-      const revealMenu = this.menuList.filter((item) => !item.hideMenu) || [];
+      const revealMenu = this.menuList.filter(item => !item.hideMenu) || [];
       return revealMenu;
-    },
+    }
   },
   data() {
     return {};
   },
-  methods: {},
+  methods: {}
 };
 </script>
 
@@ -62,7 +62,7 @@ export default {
 
   // 黑色模块
   .sider-header-title {
-    height: 160px;
+    height: 200px;
     color: #fff;
     text-align: center;
     position: relative;
@@ -73,11 +73,11 @@ export default {
     }
 
     div {
-      padding-top: 40px;
+      padding-top: 60px;
       position: absolute;
       top: 0;
       left: 0;
-      height: 160px;
+      height: 200px;
       width: 100%;
       background: rgba(255, 255, 255, 0.3);
 
@@ -86,11 +86,11 @@ export default {
       }
 
       .sider-header-welcome {
-        font-size: 30px;
+        font-size: 32px;
       }
 
       .sider-header-name {
-        font-size: 20px;
+        font-size: 24px;
       }
     }
   }

@@ -647,12 +647,27 @@
     core-js "^2.6.5"
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime-corejs3@^7.11.2":
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.16.3.tgz#1e25de4fa994c57c18e5fdda6cc810dac70f5590"
+  integrity sha512-IAdDC7T0+wEB4y2gbIL0uOXEYpiZEeuFUTVbdGq+UwCcF35T/tS8KrmMomEwEc5wBbyfH3PJVpTSUqrhPDXFcQ==
+  dependencies:
+    core-js-pure "^3.19.0"
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.0.0":
   version "7.4.5"
   resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
   integrity sha1-WCu1MfX53GfS/LaCl5iU914lPxI=
   dependencies:
     regenerator-runtime "^0.13.2"
+
+"@babel/runtime@^7.11.2":
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
+  integrity sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
 
 "@babel/template@^7.1.0", "@babel/template@^7.4.4":
   version "7.4.4"
@@ -2462,6 +2477,11 @@ copy-webpack-plugin@^4.6.0:
     minimatch "^3.0.4"
     p-limit "^1.0.0"
     serialize-javascript "^1.4.0"
+
+core-js-pure@^3.19.0:
+  version "3.19.1"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.19.1.tgz#edffc1fc7634000a55ba05e95b3f0fe9587a5aa4"
+  integrity sha512-Q0Knr8Es84vtv62ei6/6jXH/7izKmOrtrxH9WJTHLCMAVeU+8TF8z8Nr08CsH4Ot0oJKzBzJJL9SJBYIv7WlfQ==
 
 core-js@^2.4.0, core-js@^2.6.5:
   version "2.6.9"
@@ -7038,6 +7058,11 @@ regenerator-runtime@^0.13.2:
   resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
   integrity sha1-MuWcmm+5saSv8JtJMMotRHc0NEc=
 
+regenerator-runtime@^0.13.4:
+  version "0.13.9"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
+  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
+
 regenerator-transform@^0.14.0:
   version "0.14.0"
   resolved "https://registry.npm.taobao.org/regenerator-transform/download/regenerator-transform-0.14.0.tgz#2ca9aaf7a2c239dd32e4761218425b8c7a86ecaf"
@@ -8195,6 +8220,11 @@ tslib@^1.9.0:
   resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.10.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
 
+tslib@^2.1.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
+
 tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.npm.taobao.org/tty-browserify/download/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
@@ -8552,6 +8582,15 @@ w3c-xmlserializer@^1.0.1:
     domexception "^1.0.1"
     webidl-conversions "^4.0.2"
     xml-name-validator "^3.0.0"
+
+wangeditor@^4.7.9:
+  version "4.7.9"
+  resolved "https://registry.yarnpkg.com/wangeditor/-/wangeditor-4.7.9.tgz#c0922c0337739d50a8310fcac30b7a6ce238b50d"
+  integrity sha512-x8u/SJQ4pHLp597CzWm/0DrITUGpNaPk4jms03VYSaIt1mSoF5wd+dAxBsfPgmaYrYWx6CZtyGZA4Kv6s1vvlw==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    "@babel/runtime-corejs3" "^7.11.2"
+    tslib "^2.1.0"
 
 warning@^3.0.0:
   version "3.0.0"

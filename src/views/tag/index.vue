@@ -16,88 +16,89 @@ import WordCloud from "@/components/WordCloud";
 
 export default {
   components: {
-    WordCloud,
+    WordCloud
   },
   data() {
     return {
       words: [
         {
           name: "web",
-          value: 84,
+          value: 84
         },
         {
           name: "GIT",
-          value: 5,
+          value: 5
         },
         {
           name: "CSS",
-          value: 22,
+          value: 22
         },
         {
           name: "CSS",
-          value: 11,
+          value: 11
         },
         {
           name: "前端",
-          value: 101,
+          value: 101
         },
         {
           name: "CSS",
-          value: 33,
+          value: 33
         },
         {
           name: "Vue",
-          value: 77,
+          value: 77
         },
         {
           name: "js",
-          value: 98,
+          value: 98
         },
 
         {
           name: "互联网",
-          value: 66,
+          value: 66
         },
         {
           name: "插件",
-          value: 55,
+          value: 55
         },
         {
           name: "UI",
-          value: 44,
+          value: 44
         },
         {
           name: "GIT",
-          value: 5,
+          value: 5
         },
         {
           name: "CSS",
-          value: 22,
+          value: 22
         },
         {
           name: "CSS",
-          value: 11,
+          value: 11
         },
         {
           name: "CSS",
-          value: 33,
-        },
-      ],
+          value: 33
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 
 <style lang="less" scoped>
 .label {
+  width: 100%;
   text-align: center;
   &-title {
-    font-size: 18px;
+    font-size: 24px;
     margin: 40px 0;
   }
   &-content {
-    font-size: 18px;
     button {
+      font-size: 18px;
       padding: 5px 15px;
       height: auto;
       margin: 10px;

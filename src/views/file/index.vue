@@ -10,6 +10,7 @@
 </template>
 <style lang="less" scoped>
 .file {
+  width: 100%;
   padding: 50px 0 40px 0;
   // height: 100%;
   &-line {
@@ -22,13 +23,13 @@
     // padding: 0px 55px;
     position: relative;
     top: -12px;
-    left: -8px;
-    font-size: 14px;
+    left: -10px;
+    font-size: 18px;
   }
   &-move-on {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     opacity: 0.5;
     background: #555;
     border: 1px solid #fff;

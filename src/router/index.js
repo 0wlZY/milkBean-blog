@@ -1,9 +1,8 @@
-
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 import Home from "@/layouts/Home.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 /**
  * 数据结构说明
@@ -19,15 +18,15 @@ Vue.use(VueRouter)
  */
 const routes = [
   {
-    path: '*',
-    redirect: '/frist',
+    path: "*",
+    redirect: "/frist",
     hideMenu: true
   },
   {
     path: "/frist",
     component: Home,
     meta: {
-      title: '首页'
+      title: "首页"
     },
     children: [
       {
@@ -35,13 +34,13 @@ const routes = [
         component: () => import("@/views/home/index")
       }
     ],
-    imgIcon: 'home'
+    imgIcon: "home"
   },
   {
     path: "/classify",
     component: Home,
     meta: {
-      title: '分类'
+      title: "分类"
     },
     children: [
       {
@@ -49,13 +48,13 @@ const routes = [
         component: () => import("@/views/classify/index")
       }
     ],
-    imgIcon: 'appstore'
+    imgIcon: "appstore"
   },
   {
     path: "/tag",
     component: Home,
     meta: {
-      title: '标签'
+      title: "标签"
     },
     children: [
       {
@@ -63,13 +62,13 @@ const routes = [
         component: () => import("@/views/tag/index")
       }
     ],
-    imgIcon: 'tags'
+    imgIcon: "tags"
   },
   {
     path: "/file",
     component: Home,
     meta: {
-      title: '归档'
+      title: "归档"
     },
     children: [
       {
@@ -77,8 +76,17 @@ const routes = [
         component: () => import("@/views/file/index")
       }
     ],
-    imgIcon: 'bars'
+    imgIcon: "bars"
   },
+  {
+    path: "/article",
+    component: () => import("@/views/article/index"),
+    meta: {
+      title: "写文章"
+    },
+
+    imgIcon: "edit"
+  }
   // {
   //   path: '/login',
   //   name: 'login',
@@ -97,20 +105,20 @@ const routes = [
   //   children: [...risk],
   //   imgIcon: $config.menuIcons.iconRisk
   // },
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else {
       if (!to.meta.savePos) {
-        return { x: 0, y: 0 }
+        return { x: 0, y: 0 };
       }
     }
   },
   routes
-})
+});
 
-export default router
+export default router;

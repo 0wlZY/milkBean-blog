@@ -2,8 +2,8 @@
   <!-- 菜单模块 -->
   <div class="sider-infor-menu">
     <img :src="imgAvatar" alt="" />
-    <div>
-      <h2>May</h2>
+    <div class="sider-infor">
+      <h1>May</h1>
       <p>所有的晦暗都留给过往，凛冬散尽星河长明。</p>
     </div>
     <a-row class="sider-state">
@@ -27,29 +27,29 @@
       </a-col>
     </a-row>
     <a-divider :dashed="true" />
-    <div class="sider-skip">
-      <a-row>
-        <a-col :span="12">
-          <a-icon type="github" theme="filled" />
+    <a-row class="sider-jump">
+      <a-col :span="12">
+        <a href="#" target="_blank">
+          <a-icon type="github" />
           <span>GitHub</span>
-        </a-col>
-        <a-col :span="12">
-          <a-icon type="wechat" theme="filled" />
+        </a>
+      </a-col>
+      <a-col :span="12">
+        <a href="#" target="_blank">
+          <a-icon type="wechat" />
           <span>Wechat</span>
-        </a-col>
-      </a-row>
-      <a-row class="sider-skip">
-        <a-col :span="12">
-          <a-icon type="weibo-circle" theme="filled" />
-          <a
-            href="https://weibo.com/3914829201/profile?topnav=1&wvr=6&is_all=1"
-            target="_blank"
-          >
-            <span>微博</span>
-          </a>
-        </a-col>
-      </a-row>
-    </div>
+        </a>
+      </a-col>
+      <a-col :span="12">
+        <a
+          href="https://weibo.com/3914829201/profile?topnav=1&wvr=6&is_all=1"
+          target="_blank"
+        >
+          <a-icon type="weibo-circle" />
+          <span>微博</span>
+        </a>
+      </a-col>
+    </a-row>
     <a-divider :dashed="true" />
     <div class="sider-links">
       <div class="sider-links-title">
@@ -74,11 +74,11 @@ export default {
   computed: {},
   data() {
     return {
-      imgAvatar,
+      imgAvatar
     };
   },
   methods: {},
-  watch: {},
+  watch: {}
 };
 </script>
 
@@ -88,6 +88,7 @@ a {
   color: #555;
 }
 .sider-infor-menu {
+  min-height: 800px;
   margin: 30px 0;
   padding: 30px;
   background-color: #fff;
@@ -96,12 +97,15 @@ a {
   text-align: center;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-
   img {
     width: 80%;
     margin-bottom: 15px;
   }
-
+  .sider-infor {
+    p {
+      font-size: 18px;
+    }
+  }
   .sider-state {
     margin-top: 30px;
 
@@ -113,33 +117,31 @@ a {
     .sider-state-item {
       display: inline-block;
       color: #fece5b;
-      font-size: 14px;
+      font-size: 16px;
 
       &-count {
         display: block;
         text-align: center;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 20px;
       }
     }
   }
-
-  .sider-skip {
-    text-align: left;
-
-    .ant-row {
-      margin-bottom: 15px;
-
+  .sider-jump {
+    a {
+      margin: 7px 0;
+      display: flex;
+      font-size: 20px;
       i {
-        font-size: 24px;
-        margin-right: 8px;
+        font-size: 26px;
+        margin-right: 10px;
       }
     }
   }
 
   .sider-links {
     &-title {
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 600;
       margin-bottom: 10px;
 
@@ -155,6 +157,7 @@ a {
 
       li {
         margin: 15px 0 0;
+        font-size: 18px;
 
         span {
           padding-bottom: 5px;
